@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="zxx">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="shortcut icon" href="{% static 'img/favicon.png'% }">
+		<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+		<title>Akonta</title>
+		<link rel="stylesheet" href="{% static 'css/bootstrap.css' %} ">
+		<link rel="stylesheet" href="{% static 'css/line-awesome.css' %} ">
+		<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %} ">
+		<link rel="stylesheet" href="{% static 'css/swiper.css' %} ">
+		<link rel="stylesheet" href="{% static 'css/style.css' %} ">
+	</head>
+	<body>
+
+		<!-- loader -->
+		<div class="loader">
+	      	<div class="loading">
+		        <div class="spinner-border aloader" role="status">
+		      		<span class="sr-only"></span>
+		    	</div>
+		    </div>
+	    </div>
+		<!-- end loader -->
+
+
+		<!-- navbar -->
+		<div id="navbar" class="navbar navbar-expand-lg justify-content-center align-items-center">
+			<div class="container">
+				 <a href="#" class="navbar-brand"><img src="{% static 'img/logo.png' %} " alt=""></a>
+				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			        <i class="la la-bars"></i>
+			    </button>
+			    <ul class="button-navbar">
+			    	<li><a href="{% url 'murojat' %}" class="button button2">Murojaat</a></li>
+			    </ul>
+			</div>
+		</div>
+		<!-- end navbar -->
+
+
+		<!-- intro -->
+		<div id="home" class="intro">
+			<div class="container">
+				<div class="content">
+					<div class="row align-items-center">
+						<div class="col-md">
+							<h1>Buxgalteriya muammolarini bizga ishonib topshiring</h1>
+							<p>Biz sizning hisob-kitobingizni har qanday momosiga ,yechib bera olamiz va ishiningizni siz o'ylagandanda, osonlashtiramiz doimo biz bilan bo'ling. </p>
+							<a href="https://bootstraptema.ru/_sf/61/6152.html"><h1>SHablon</h1></a>
+						</div>
+						<div class="col-md">
+							<div class="content-image">
+								<img src="{% static 'img/intro.png' %} " alt="">
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end intro -->
+
+		<!-- client -->
+		<div class="clients">
+			{% for imgs in img  %}
+			<div class="container">
+				<div class="row">
+					<div class="col-md col-sm col-12">
+						<img src="{{imgs.img.url}} " alt="">
+					</div>
+						<div class="col-md col-sm col-12">
+						<h3>  {{imgs.title}} <h3>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<!-- end client -->
+
+		<!-- about -->
+		<div id="about" class="about">
+			<div class="container">
+				<div class="row g-5 align-items-center">
+					<div class="col-md-7">
+						<img src="{% static 'img/about.png' %} " alt="">
+					</div>
+					<div class="col-md">
+						<div class="content">
+							<h2><a href="https://bootstraptema.ru/_sf/61/6152.html">bosining</a></h2>
+							<P>Kompaniyaning o'zi juda muvaffaqiyatli kompaniya. Ko'rib turganingizdek, biz ko'pchilikni xisob-kitoblarni osonlashtirganmiz</P>
+							<div class="row">
+								<div class="col">
+									<ul>
+										<li><i class="la la-check"></i> Professional</li>
+										<li><i class="la la-check"></i> Ishonchli</li>
+										<li><i class="la la-check"></i> ishonarli</li>
+									</ul>
+								</div>
+								<div class="col">
+									<ul>
+										<li><i class="la la-check"></i> Bepul qo'llab-quvvatlash</li>
+										<li><i class="la la-check"></i> Zamonaviy</li>
+										<li><i class="la la-check"></i> hamyonbop narx</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end about -->
+
+		<!-- achievement -->
+		<div class="achievement">
+			{% for compnie in companies %}
+			<div class="container">
+				<div class="content">
+					<div class="row">
+						<div class="col-md col-sm-6">
+							 <i class="la la-users"></i>
+							 <h2 class="number-counter">{{compnie.cilent_soni}}</h2>
+							 <p>bizning cilentalr</p>
+						</div>
+						<div class="col-md col-sm-6">
+							 <i class="la la-location-arrow"></i>
+							 <h2 class="number-counter">{{compnie.qilingan_project_soni}}</h2>
+							 <p>qilingan proyektlar</p>
+						</div>
+						<div class="col-md col-sm-6">
+							 <i class="la la-expand"></i>
+							 <h2 class="number-counter">{{compine.ish_foalayti}}</h2>
+							 <p>ishlab kelamiz</p>
+						</div>
+						<div class="col-md col-sm-6">
+							 <i class="la la-recycle"></i>
+							 <h2 class="number-counter">{{compnie.buyurt_malar}}</h2>
+							 <p>Buyurtmalar sonni</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			{%endfor%}
+		</div>
+		<!-- end achievement -->
+
+		<!-- services -->
+		<div id="services" class="services">
+			<div class="container">
+				<h2>Choose Our <br> The Best Services</h2>
+				<div class="row gx-5">
+					<div class="col-md col-sm">
+						<div class="content-left">
+							<div class="content">
+								<img src="{% static 'img/services3.png'%} " alt="">
+								<h5>Buxgalteriya hisobi</h5>
+								<p>Bu hisobot yillik, choraklik yoki oylik bo'lishi mumkin. Shuningdek, bu hisobotda nimalarni qamrab olishini belgilash kerak: daromadlar, xarajatlar, foyda va zararlar, balans varaqalari, yoki boshqa moliyaviy ko'rsatkichlar.</p>
+							</div>
+							<div class="content">
+								<img src="{% static 'img/services2.png' %} " alt="">
+								<h5>To'lov solig'i</h5>
+								<p>To'lov soliqdagi muomolarga yechim beramiz va u uchun maxsus dasturlar tuzib beramiz.<br>
+								To'lov solig'i (payroll tax) – bu ish beruvchilar va xodimlar tomonidan to'lanadigan soliq turi bo'lib, ularning maoshlaridan ushlab qolinadi. Bu soliq xodimlarning daromadiga qarab hisoblanadi va odatda ijtimoiy sug'urta, sog'liqni saqlash va boshqa davlat dasturlarini moliyalashtirishga yo'naltiriladi. Quyida to'lov solig'i haqida qisqacha ma'lumot keltirilgan:
+
+								</p>
+							</div>
+							<div class="content">
+								<img src="{% static 'img/services1.png' %} " alt="">
+								<h5>Buxgalteriya hisobi</h5>
+								<p>Buxgalteriya hisobi korxonaning moliyaviy faoliyatini qayd etish, tahlil qilish va hisobot berishni o'z ichiga oladi.<br>
+									Hisobot odatda korxona nomi, soliq to'lovchining identifikatsiya raqami, daromadlar, xarajatlar, sof foyda, aktivlar, majburiyatlar va aksiyadorlik kapitalidan iborat bo'ladi.<br>
+									Hisobot davri mobaynida korxonaning moliyaviy holati va natijalari to'g'risida aniq ma'lumotlarni beradi. Bu ma'lumotlar moliyaviy qarorlar qabul qilishda muhim ahamiyatga ega.</p>
+							</div>
+
+						</div>
+					</div>
+					<div class="col-md col-sm">
+						<div class="content-right">
+							<div class="content">
+								<img src="{% static 'img/services4.png' %} " alt="">
+								<h5>Tranzaksiya</h5>
+								<p>
+											Tranzaksiya - buxgalteriya hisobi va moliyaviy boshqaruvda muhim tushuncha bo'lib, korxonaning moliyaviy holatiga ta'sir qiluvchi har qanday iqtisodiy hodisani anglatadi. Tranzaksiyalar ikki tomonni qamrab oladi: debet va kredit. Quyida tranzaksiya haqida qisqacha ma'lumot:</p>
+							</div>
+							<div class="content">
+								<img src="{% static 'img/services5.png' %} " alt="">
+								<h5>Biznes soni</h5>
+								<p>
+								Biznes soni yoki statistika hisobotlari korxonaning moliyaviy faoliyati, daromadlar, xarajatlar va boshqa muhim ko'rsatkichlar to'g'risida aniq raqamlarni o'z ichiga oladi. Quyida biznesning asosiy moliyaviy ko'rsatkichlari haqida qisqacha ma'lumot keltirilgan:</p>
+							</div>
+							<div class="content">
+								<img src="{% static 'img/services6.png' %} " alt="">
+								<h5>Buxgalteriya hisobi haqida</h5>
+								<p>Buxgalteriya hisobi - bu korxona va tashkilotlarning moliyaviy faoliyatini qayd etish, tahlil qilish va hisobot berish tizimi. Buxgalteriya hisobi yordamida korxonaning daromadlari, xarajatlari, aktivlari va majburiyatlari to'g'risida aniq va ishonchli ma'lumotlar olinadi. Buxgalteriya hisobotlari moliyaviy qarorlar qabul qilishda, soliq to'lashda va investorlarga axborot berishda muhim rol o'ynaydi.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end services -->
+
+		<!-- testimonial -->
+		<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Testimonial</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.9/swiper-bundle.min.css">
+    <style>
+        .testimonial {
+            padding: 20px;
+            color: black;
+        }
+        .content-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content-image img {
+            .content-image img {
+            width: 600px;
+            height: 500px;
+            border-radius: 50%;
+        }
+        .swiper {
+            width: 200px%;
+            height: 300px%;
+        }
+        .swiper-slide {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .content {
+            text-align: center;
+        }
+        .text h5 {
+            margin: 0;
+        }
+        .text span {
+            font-size: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="testimonial" class="testimonial">
+    <div class="container">
+        <div class="content-box">
+            <div class="content-image">
+                <img src="{{ compayas.img.url }}" alt="">
+            </div>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="content">
+                            <i class="la la-quote-left"></i>
+                            <p>{{ compayas.title }}</p>
+                            <div class="text">
+                                <h5>John Doe</h5>
+                                <span>Director</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="content">
+                            <i class="la la-quote-left"></i>
+                            <p>xxxxx</p>
+                            <div class="text">
+                                <h5>Mario</h5>
+                                <span>Marketing</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="content">
+                            <i class="la la-quote-left"></i>
+                            <p>{{ compayas.content }}</p>
+                            <div class="text">
+                                <h5>{{ compayas.asoschi }}</h5>
+                                <span>Programming</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="content">
+                            <p>{{ compayas.companiya_disigner }}</p>
+                            <div class="text">
+                                <h5>Rami</h5>
+                                <span>Designer</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/6.5.9/swiper-bundle.min.js"></script>
+<script>
+    var swiper = new Swiper('.mySwiper', {
+        slidesPerView: 1,
+        spaceBetween: 10,
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+    });
+</script>
+
+</body>
+</html>
+		<!-- end testimonial -->
+
+
+		<!-- contact -->
+		<div id="contact" class="contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-contact">
+						<h2>bo'glanish</h2>
+					</div>
+					<div class="col-md-4">
+						<h5>Manzil</h5>
+						<span> Andijon viloyati Bo'ston tumanni Obod MFY 196-uy </span>
+					</div>
+					<div class="col-md">
+						<h5>Phone</h5>
+						<span> +998 91 061 70 80</span>
+					</div>
+					<div class="col-md">
+						<h5>Email</h5>
+						<span> contact@domain.com </span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- end contact -->
+
+		<!-- footer -->
+		<footer>
+			<div class="container">
+				<div class="row reverse">
+					<div class="col-md col-sm col-12">
+						Mualliflik huquqi © Barcha huquqlar himoyalangan
+					</div>
+					<div class="col-md col-sm col-12">
+						<ul>
+							<li><a href="https://x.com/arabiy2711?t=GqwCD90wMcOng4Qdnjkl2w&s=09"><i class="la la-twitter"></i></a></li>
+							<li><a href="https://www.instagram.com/invites/contact/?i=dz4m5lpv8tta&utm_content=tlx8dv0"><i class="la la-instagram"></i></a></li>
+							<li><a href="https://t.me/Matematikaaa12"><i class="la la-telegram"></i></a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!-- end footer -->
+
+		<!-- script -->
+		<script src="{% static 'js/jquery.min.js' %}"></script>
+		<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+		<script src="{% static 'js/jquery.filterizr.min.js' %}"></script>
+		<script src="{% static 'js/magnific-popup.min.js' %}"></script>
+		<script src="{% static 'js/swiper.min.js' %}"></script>
+		<script src="{% static 'js/main.js' %}"></script>
+
+
+	</body>
+</html>
